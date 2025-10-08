@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-    --primary-color: #1e3a8a;      /* Azul profundo */
-    --accent-color: #38bdf8;       /* Celeste vibrante */
-    --background-color: #f0f9ff;   /* Fondo suave */
-    --text-color: #1f2937;         /* Gris oscuro */
-    --header-height: 70px;
+    --primary-color: #1e3a8a;
+    --accent-color: #38bdf8;
+    --background-color: #f0f9ff;
+    --text-color: #1f2937;
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.15);
 }
 
+/* --- BASE --- */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
@@ -16,6 +18,145 @@ body {
     padding: 0;
     line-height: 1.6;
 }
+
+
+/* --- PROFILE SECTION --- */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #fff;
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: scale(1.02);
+}
+
+.profile-photo {
+    width: 360px;
+    height: 260px;
+    border-radius: 10%;
+    object-fit: cover;
+    /*box-shadow: 0 0 20px var(--accent-color);*/
+    border: 3px solid var(--accent-color);
+}
+
+.profile-info {
+    margin-left: 2rem;
+}
+
+.profile-name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-role {
+    font-weight: 400;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.profile-line {
+    border: 0;
+    border-top: 2px solid var(--accent-color);
+    width: 80px;
+    margin: 15px 0;
+}
+
+.profile-desc {
+    font-size: 1rem;
+}
+
+.profile-tags {
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    margin-right: 8px;
+    margin-top: 6px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: var(--accent-color);
+    color: #fff;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tag:hover {
+    background: #7dd3fc;
+    box-shadow: 0 0 8px #7dd3fc;
+}
+
+/* --- ABOUT & SKILLS --- */
+.about-section,
+.skills-section {
+    max-width: 850px;
+    margin: 60px auto;
+    background: var(--card-bg);
+    padding: 35px 45px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.about-section h2,
+.skills-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* --- SKILLS LIST --- */
+.skills-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-section li {
+    margin-bottom: 8px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.skills-section li::before {
+    content: "▹";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
 
 .app-container {
     display: flex;
@@ -31,7 +172,7 @@ body {
     height: var(--header-height);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -42,8 +183,8 @@ body {
 }
 
 .navigation {
-    margin-top: 10px;
-    padding: 10px 0;
+    margin-top: 4px;
+    padding: 6px 0;
     border-bottom: 1px solid #ccc;
 }
 
@@ -51,6 +192,7 @@ body {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-links a {
@@ -62,4 +204,5 @@ body {
 
 .nav-links a:hover {
     color: var(--accent-color);
+    font-weight: 800;
 }

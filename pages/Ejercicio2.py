@@ -7,7 +7,7 @@ from scipy.integrate import odeint
 import numpy.linalg as LA
 import plotly.express as px
 
-dash.register_page(__name__, path="/EjercicioSEIR", name="SEIR - Estabilidad")
+dash.register_page(__name__, path="/Semana1:2", name="SEIR - Estabilidad")
 
 # --- funciones de modelo y linealización ---
 def seir_rhs(y, t, N, beta, sigma, gamma):

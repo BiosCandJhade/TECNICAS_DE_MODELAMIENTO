@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 
-dash.register_page(__name__, path="/Ejercicio1", name="Enfriamiento Newton")
+dash.register_page(__name__, path="/Semana1", name="Enfriamiento Newton")
 
 # --- Datos y funciones ---
 T_amb = 25

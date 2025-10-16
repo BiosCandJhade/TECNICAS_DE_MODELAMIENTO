@@ -6,7 +6,7 @@ server = app.server
 
 # Construir enlaces ordenando para que /inicio vaya primero
 pages = list(dash.page_registry.values())
-pages_sorted = sorted(pages, key=lambda p: (0 if p.get("path") == "/inicio" else 1, p.get("name","")))
+pages_sorted = sorted(pages, key=lambda p: (0 if p.get("path") == "/" else 1, p.get("name","")))
 
 links = []
 for p in pages_sorted:

@@ -101,9 +101,9 @@ layout = html.Div([
             html.Div(id="tab-content")
         ])
     ])
-])
-
-# ---- Callbacks ----
+])  
+    
+#    ---- Callbacks ----
 @callback(
     Output("tab-content", "children"),
     Output("warnings", "children"),
